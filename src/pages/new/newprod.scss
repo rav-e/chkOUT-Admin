@@ -1,0 +1,200 @@
+.newProduct {
+    display: flex;
+
+    .subcontainer {
+        flex: 6;
+        flex-direction: column;
+        .formProduct{
+            -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+            box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+            padding: 20px;
+            margin: 10px 20px;
+        
+
+        .top {
+            height: 10px;
+
+            display: flex;
+            justify-content: center;
+        }
+
+        .field{
+            font-size: 10;
+            color: black;
+            font-weight: bold;
+        }
+
+        .bodycat {
+            margin: 15px;
+            padding: 15px;
+            color: grey;
+        }
+
+        .bodysubcat {
+            margin: 10px;
+            padding: 10px;
+            color: grey;
+        }
+
+
+        .temp {
+            margin-bottom: 0px;
+        }
+
+        .bodysub {
+            margin: 8px;
+
+
+        }
+        .details {
+            padding: 15px;
+            margin: 15px;
+
+            img {
+                width: 85px;
+                height: 85px;
+                border-radius: 10px;
+                box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+                opacity: 85%;
+            }
+
+
+
+            input[type="text"] {
+                // margin: 5px;
+                font-size: 15px;
+                height: 50px;
+                border: 1px solid #C4C4C4;
+                padding: 10px;
+                border-radius: 4px;
+                width: 100%;
+            }
+
+            textarea {
+                padding: 5px;
+                border: 1px solid #C4C4C4;
+                padding: 10px;
+                border-radius: 4px;
+            }
+        }
+
+        .details1 {
+            padding: 15px;
+            margin: 15px;
+        }
+
+        .color {
+            justify-items: center;
+            display: flex;
+            flex-direction: column;
+            flex: 3;
+            padding: 15px;
+
+            .react-tag-input {
+                margin: 5px;
+                padding: 5px;
+                min-height: 40px;
+                width: 100%
+            }
+
+
+
+            select {
+
+                width: 100%;
+
+
+                option {
+
+
+                    padding: 10px;
+                }
+            }
+        }
+
+        .imagess {
+            display: flex;
+            flex: 3;
+
+
+
+            .forinput {
+                display: flex;
+                flex: 3;
+                flex-direction: column;
+
+                Label {
+                    display: flex;
+                    flex: 3;
+                    flex-direction: column;
+                }
+
+                input[type="text"] {
+                    padding: 5px;
+                    margin: 5px;
+                    height: 54px;
+                }
+
+            }
+
+            #galeria {
+                display: flex;
+            }
+
+            #galeria img {
+                width: 85px;
+                height: 85px;
+                border-radius: 10px;
+                box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+                opacity: 85%;
+            }
+        }
+        .buttonP {
+
+            // width: 104px;
+            padding: 10px;
+            align-items: center;
+            border: none;
+            background-color: #ef9356;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 5px;
+            margin-left: 30px;
+
+        }
+
+    }
+}
+}
+
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.previewImage{
+    display: block;
+    max-width:180px;
+    max-height:180px;
+    width: auto;
+    height: auto;
+}
+.editorProd{
+    width: 100%;
+}
+.ck-editor__editable
+{
+   min-height: 250px !important;
+   max-height: 250px !important;
+}
+.ProductMaster{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

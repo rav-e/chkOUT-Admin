@@ -1,0 +1,25 @@
+.Setting {
+  display: flex;
+  flex:1;
+  .containerSetting {
+    flex: 6;
+  }
+  .cardSetting {
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+    padding: 20px;
+    margin: 10px 20px;
+    min-height: 90%;
+  }
+}
+
+
+input[type="number"] {
+  // margin: 5px;
+  font-size: 15px;
+  height: 50px;
+  border: 1px solid #C4C4C4;
+  padding: 10px;
+  border-radius: 4px;
+  width: 100%;
+}
