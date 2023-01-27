@@ -28,7 +28,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="top ">
-      <Link to="/" style={{ textDecoration: "none" }}>
+      <Link to="/dashboard" style={{ textDecoration: "none" }}>
           {/* <span className="logo" >  OPENBOX.IN</span> */}
           <img className = "nameIcon" src={name} alt="" />
         </Link>
@@ -36,7 +36,7 @@ const Sidebar = () => {
       <div className="center">
         <ul>
           <p className="title">MAIN</p>
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/dashboard" style={{ textDecoration: "none" }}>
           <li>
             <DashboardIcon className="icon" />
             <span>Dashboard</span>

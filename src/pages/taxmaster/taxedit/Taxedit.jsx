@@ -35,9 +35,10 @@ const Taxedit = () => {
 
 
   const editTax = async () => {
-
-
-    axios.post("http://localhost:8000/api/tax/editTaxById", {
+  
+   
+    if((taxValue)>=0){
+      axios.post("http://localhost:8000/api/tax/editTaxById", {
       id: params.id,
       name: name,
       value: parseInt(taxValue)
@@ -47,6 +48,10 @@ const Taxedit = () => {
       })
       navigate("/taxmaster")
     window.location.reload()
+    }else{
+      alert("tax value should be greater than equal to 0")
+    }
+    
 
   };
 
@@ -84,12 +89,15 @@ const Taxedit = () => {
                     </h5>
                     <input
                       type="number"
-                      value={taxValue} onChange={(e) => { setTaxValue(e.target.value) }}
+                      value={taxValue}
+                      min={0} 
+                      oninput="validity.valid||(value='');"
+                       onChange={(e) => { setTaxValue(e.target.value) }}
                     />
                   </div>
                   <div className=" d-flex justify-content-center">
 
-                  <Link to="/taxmaster" >
+                  <Link to="" >
                     <button className="buttonTax" onClick={(e) => editTax()}>Done</button>
                   </Link>
                   </div>

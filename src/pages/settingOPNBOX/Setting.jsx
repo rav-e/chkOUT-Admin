@@ -69,11 +69,19 @@ export default function Setting() {
     }
 
     const updatePlatformcommision = async ()=>{
-      var result =await axios.post("http://localhost:8000/api/platform/updatePlatformFees",
-      {id:1,
-      fees:fees})
-      var result = await result.data;
-      console.log(result)
+     
+      if(fees>=0){
+        var result =await axios.post("http://localhost:8000/api/platform/updatePlatformFees",
+        {id:1,
+          fees:fees})
+          var result = await result.data;
+          console.log(result)
+          
+      }else{
+        alert(" value should be greater than equal to 0");
+        getPlatformcommision();
+      }
+      
     }
   return (
     <div className="Setting">
@@ -116,7 +124,7 @@ export default function Setting() {
 
                               <span><strong> Platform Fee (%):</strong></span>
                 
-                              <input type="number"  value={fees} onChange={(e) => { setFees(e.target.value) }} className="platformFeeInput mt-3" />
+                              <input type="number"  value={fees} min={0} oninput="validity.valid||(value='');"  onChange={(e) => { setFees(e.target.value) }} className="platformFeeInput mt-3" />
 
                               <button className="btn btn-sm btn-outline-warning mt-3" onClick={(e)=>updatePlatformcommision()} data-dismiss="modal">Done</button>
                             </form>

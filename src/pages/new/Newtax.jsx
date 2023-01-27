@@ -24,16 +24,22 @@ const Newtax = ({ title }) => {
 
 
   const taxx = async (e) => {
+    
     e.preventDefault();
-    axios.post("http://localhost:8000/api/tax/addTax", {
-      name: data.taxName,
-      value: parseInt(data.taxValue)
-    })
-      .then(res => {
-        console.log(res.data)
+    if((data.taxValue)>=0){
+      axios.post("http://localhost:8000/api/tax/addTax", {
+        name: data.taxName,
+        value: parseInt(data.taxValue)
       })
-      navigate("/taxmaster")
-    window.location.reload()
+        .then(res => {
+          console.log(res.data)
+        })
+        navigate("/taxmaster")
+      window.location.reload()
+    }else{
+      alert("tax value should be greater than equal to  0")
+    }
+    
   };
 
   return (
@@ -74,10 +80,12 @@ const Newtax = ({ title }) => {
                       name="value" id="taxValue"
                       onChange={(e) => handle(e)}
                       placeholder="% of Tax"
+                      min={0} 
+                      oninput="validity.valid||(value='');"
                       value={data.taxValue}
                     />
                   </div>
-                  <Link to="/taxmaster" >
+                  <Link to="" >
                     <button className="buttonN" onClick={(e) => taxx(e)}>  Add New Tax </button>
                   </Link>
                 </form>
