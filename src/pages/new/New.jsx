@@ -15,12 +15,14 @@ import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import parse from 'html-react-parser';
 import { height } from "@mui/system";
+import  "./no-image-icon-0.jpg"
 
 
 
 
 const New = ({ title }) => {
-    const [categoryFile, setFile] = useState("");
+    const[count,setCount]=useState("")
+    const [categoryFile, setFile] = useState();
     const [text, setText] = useState("");
     let navigate = useNavigate();
 
@@ -37,16 +39,21 @@ const New = ({ title }) => {
     }
 
     const onFileChange = (e) => {
+        setCount(1)
         console.log(e.target.files[0])
         if (e.target && e.target.files[0]) {
             setFile(e.target.files[0]);
+            
         }
     }
 
     const uploadImage = async () => {
+        
+       if(count){
         try {
             const formData = new FormData();
             console.log(text)
+            
             formData.append("categoryIcon", categoryFile);
             formData.append("categoryName", data.categoryName);
             formData.append("description", text);
@@ -66,7 +73,17 @@ const New = ({ title }) => {
         } catch (error) {
             console.error(error);
         }
+        navigate('/categary', { replace: true });
         window.location.reload()
+       }else{
+        alert("PLZZ upload the image")
+       }
+       
+       
+       
+            
+        
+        
 
     };
 
@@ -110,6 +127,7 @@ const New = ({ title }) => {
                                         type="file"
                                         id="file"
                                         onChange={onFileChange}
+                                        
                                         style={{ display: "none" }}
                                         name="categoryIcon"
                                     />
@@ -149,7 +167,7 @@ const New = ({ title }) => {
 
                                             }} />
                                     </div>
-                                    <Link to="/categary"> <button className="buttonN mb-3" onClick={(e) => uploadImage()}>  Add New Category </button></Link>
+                                    <Link to=""> <button className="buttonN mb-3" onClick={(e) => uploadImage(e)}>  Add New Category </button></Link>
                                     </div>
                                 </form>
                             </div>

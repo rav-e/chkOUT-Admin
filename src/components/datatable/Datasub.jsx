@@ -23,6 +23,7 @@ const Datasub = () => {
   //Disable switch
   //const label = { inputProps: { 'aria-label': 'Switch demo' } };
   //const [checked, setChecked] = React.useState(false);
+ 
   const RedSwitch = styled(Switch)(({ theme }) => ({
     '& .MuiSwitch-switchBase.Mui-checked': {
       color: red[900],
@@ -55,19 +56,14 @@ const Datasub = () => {
   //end of disable  switch code
 
   async function handleView(id) {
-
-
     return (
       <div>
         <Subcategoryview />
       </div>
-
     )
   }
 
   async function handleEdit(id) {
-
-
     return (
       <div>
         <Subcategoryedit />
@@ -78,16 +74,13 @@ const Datasub = () => {
 
 
   const [value, setValue] = useState("");
-
   const [categoryId, setcategoryID] = useState()
-
 
   //select the category 
   const handleChange = e => {
     setcategoryID(e.target.value)
     console.log(e.target)
     setValue(e.target.value);
-   
     fetchSubCategoryById(e.target.value)
 
   }
@@ -100,21 +93,19 @@ const Datasub = () => {
   const fetchCategory = async () => {
     var result = await fetch("http://localhost:8000/api/category/getAllCategory")
     var temp = await result.json()
-    console.log(temp)
+    console.log(temp[0].id)
     setItem(temp)
+    setValue(temp[0].id);
+    fetchSubCategoryById(temp[0].id)
   }
 
 
 
   //fetch subcategory name
   const [subcategory, setsubCategory] = useState([]);
-
-
   const fetchSubCategoryById = async (id) => {
-
     var result = await axios.post('http://localhost:8000/api/subcategory/getsubCategoryByCategoryId',
       { categoryId: id })
-     
     var ans = await result.data
     setsubCategory(ans)
   }
@@ -128,15 +119,9 @@ const Datasub = () => {
 
 
   async function handleDelete(id) {
-
-
     if (window.confirm("Want to delete?")) {
-     
-
-
       let del = await axios.post('http://localhost:8000/api/subcategory/deleteSubcategoryById',
         { id })
-
       del = await del.data;
       var mssg=del.message
       if( mssg=="product"){
@@ -146,7 +131,6 @@ const Datasub = () => {
       }
       console.log(del);
     }
-
   };
 
 
@@ -208,7 +192,7 @@ const Datasub = () => {
         <h3 className='temp'>Select the category</h3>
      
           <FormControl fullWidth>
-            <InputLabel id="demo-simple-select-label" style={{ fontSize: 20}}>Category </InputLabel>
+            <InputLabel id="demo-simple-select-label" style={{ fontSize: 20}}>CAT</InputLabel>
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"

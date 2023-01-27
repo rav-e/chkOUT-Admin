@@ -25,6 +25,7 @@ import parse from 'html-react-parser';
 import { useNavigate } from "react-router-dom";
 
 const Newsub = ({ title }) => {
+    const[count,setCount]=useState("")
     const [subcategoryFile, setFile] = useState("");
     const [richtext, setRichText] = useState("");
     let navigate = useNavigate();
@@ -46,7 +47,6 @@ const Newsub = ({ title }) => {
 
     })
 
-    //const [subName , setSubName] =useState("")
 
     const [item, setItem] = useState([])
 
@@ -58,6 +58,7 @@ const Newsub = ({ title }) => {
     }
 
     const onFileChange = (e) => {
+        setCount(1)
         setFile(e.target.files[0])
         console.log(e.target.files[0])
         if (e.target && e.target.files[0]) {
@@ -84,32 +85,38 @@ const Newsub = ({ title }) => {
 
 
     const uploadImage = async () => {
-        try {
-            const formData = new FormData();
-            console.log(richtext);
-            formData.append("subcategoryIcon", subcategoryFile);
-            formData.append("subcategoryName", data.categoryName);
-
-            formData.append("categoryId", categoryId);
-            formData.append("descripition", richtext);
-
-
-            const config = {
-                headers: {
-                    "content-type": "multipart/form-data"
-                }
-            };
-            const API = "subCategory/addsubCategory";
-            const HOST = "http://localhost:8000/api";
-            const url = `${HOST}/${API}`;
-
-            const result = await axios.post(url, formData, config);
-
-
-        } catch (error) {
-            console.error(error);
+        if(count){
+            try {
+                const formData = new FormData();
+                console.log(richtext);
+                formData.append("subcategoryIcon", subcategoryFile);
+                formData.append("subcategoryName", data.categoryName);
+    
+                formData.append("categoryId", categoryId);
+                formData.append("descripition", richtext);
+    
+    
+                const config = {
+                    headers: {
+                        "content-type": "multipart/form-data"
+                    }
+                };
+                const API = "subCategory/addsubCategory";
+                const HOST = "http://localhost:8000/api";
+                const url = `${HOST}/${API}`;
+    
+                const result = await axios.post(url, formData, config);
+    
+    
+            } catch (error) {
+                console.error(error);
+            }
+            navigate('/subcategary', { replace: true });
+            window.location.reload()
+        }else{
+            alert("PLZZ upload the image")
         }
-        window.location.reload()
+        
     };
 
 
@@ -219,7 +226,7 @@ const Newsub = ({ title }) => {
                                         </div>
 
 
-                                        <Link to="/subcategary"><button className="buttonN mb-3" onClick={(e) => uploadImage()}>  Add New Sub-Category  </button></Link>
+                                        <Link to=""><button className="buttonN mb-3" onClick={(e) => uploadImage()}>  Add New Sub-Category  </button></Link>
                                     </div>
                                 </form>
 

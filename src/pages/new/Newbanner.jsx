@@ -9,15 +9,17 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import UploadIcon from '@mui/icons-material/Upload';
+import { useNavigate } from "react-router-dom";
 
 const Newbanner = ({ title }) => {
+  const[count,setCount]=useState("")
   const [bannerFile, setFile] = useState("");
   const [text, setText] = useState("");
   const [data, setData] = useState({
     name: "",
 
   })
-
+  let navigate = useNavigate();
   function handle(e) {
     const newdata = { ...data };
     newdata[e.target.id] = e.target.value;
@@ -26,6 +28,7 @@ const Newbanner = ({ title }) => {
   }
 
   const onFileChange = (e) => {
+    setCount(1)
     console.log(e.target.files[0]);
     if (e.target && e.target.files[0]) {
       setFile(e.target.files[0]);
@@ -33,28 +36,33 @@ const Newbanner = ({ title }) => {
   };
 
   const uploadImage = async () => {
-    try {
-      const formData = new FormData();
-      formData.append("image", bannerFile);
-      formData.append("name", data.name);
-      formData.append("description", text);
-      const config = {
-        headers: {
-          "content-type": "multipart/form-data"
-        }
-      };
-      const API = "banner/addBanner";
-      const HOST = "http://localhost:8000/api";
-      const url = `${HOST}/${API}`;
-
-      const result = await axios.post(url, formData, config);
-
-
-
-    } catch (error) {
-      console.error(error);
+    if(count){
+      try {
+        const formData = new FormData();
+        formData.append("image", bannerFile);
+        formData.append("name", data.name);
+        formData.append("description", text);
+        const config = {
+          headers: {
+            "content-type": "multipart/form-data"
+          }
+        };
+        const API = "banner/addBanner";
+        const HOST = "http://localhost:8000/api";
+        const url = `${HOST}/${API}`;
+  
+        const result = await axios.post(url, formData, config);
+  
+  
+  
+      } catch (error) {
+        console.error(error);
+      }
+      navigate('/banner', { replace: true });
+      window.location.reload()
+    }else{
+      alert("PLZZ upload the image")
     }
-    window.location.reload()
 
   };
 
@@ -135,7 +143,7 @@ const Newbanner = ({ title }) => {
 
                         }} />
                     </div>
-                    <Link to="/banner"> <button className="buttonN mb-3" onClick={(e) => uploadImage()}>  Add New Banner </button></Link>
+                    <Link to=""> <button className="buttonN mb-3" onClick={(e) => uploadImage()}>  Add New Banner </button></Link>
                   </div>
                 </form>
               </div>

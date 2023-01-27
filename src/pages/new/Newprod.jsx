@@ -23,10 +23,14 @@ import "@pathofdev/react-tag-input/build/index.css";
 import "react-dropzone-uploader/dist/styles.css";
 import Dropzone from "react-dropzone-uploader";
 import MultiImageInput from "react-multiple-image-input";
+import { useNavigate } from "react-router-dom";
 
 export default function Newprod() {
 
   //const [text, setText] = useState("");
+  let navigate = useNavigate();
+  const[count,setCount]=useState("")
+
   const [images, setImages] = useState({});
   const [value, setValue] = useState("");
   const [categoryId, setcategoryID] = useState();
@@ -74,6 +78,7 @@ export default function Newprod() {
 
 
   const handleChange = (e) => {
+    
     setcategoryID(e.target.value);
     console.log(e.target);
     setValue(e.target.value);
@@ -128,6 +133,7 @@ export default function Newprod() {
 
   //images upload
   const onFileChange = (e) => {
+    setCount(1)
     console.log(e.target.files[0]);
     if (e.target && e.target.files[0]) {
       setFile(e.target.files[0]);
@@ -138,35 +144,41 @@ export default function Newprod() {
 
   //api integrate
   const uploadImage = async () => {
-    try {
-      const formData = new FormData();
-
-      formData.append("categoryId", categoryId);
-      formData.append("subCategoryId", subcategoryId);
-      formData.append("productName", data.productName);
-      formData.append("productDescription", productDescription);
-      formData.append("highlightFeature", highlightFeature);
-      formData.append("color", JSON.stringify(tags));
-      formData.append("image", file);
-      formData.append("taxId", taxId  );
-
-      console.log(formData);
-
-      const config = {
-        headers: {
-          "content-type": "multipart/form-data",
-        },
-      };
-      const API = "product/addProduct";
-      const HOST = "http://localhost:8000/api";
-      const url = `${HOST}/${API}`;
-
-      const result = await axios.post(url, formData, config);
-      console.log(result);
-    } catch (error) {
-      console.error(error);
+    if(count){
+      try {
+        const formData = new FormData();
+  
+        formData.append("categoryId", categoryId);
+        formData.append("subCategoryId", subcategoryId);
+        formData.append("productName", data.productName);
+        formData.append("productDescription", productDescription);
+        formData.append("highlightFeature", highlightFeature);
+        formData.append("color", JSON.stringify(tags));
+        formData.append("image", file);
+        formData.append("taxId", taxId  );
+  
+        console.log(formData);
+  
+        const config = {
+          headers: {
+            "content-type": "multipart/form-data",
+          },
+        };
+        const API = "product/addProduct";
+        const HOST = "http://localhost:8000/api";
+        const url = `${HOST}/${API}`;
+  
+        const result = await axios.post(url, formData, config);
+        console.log(result);
+      } catch (error) {
+        console.error(error);
+      }
+      navigate('/product', { replace: true });
+      window.location.reload()
+    }else{
+      alert("PLZZ upload the image")
     }
-    window.location.reload()
+    
 
 
   };
@@ -391,7 +403,7 @@ export default function Newprod() {
                 </div>
               </div>
               <Link
-                to="/product"
+                to=""
                 style={{ textDecoration: "none", color: "#FFF" }}
               >
                 <button className="btn buttonP" onClick={(e) => uploadImage()}>
