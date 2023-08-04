@@ -19,7 +19,7 @@ const Subcategoryedit = () => {
   const [descripition, setDescripition] = useState("");
   const [subcategoryIcon, setImage] = useState("");
 
-  
+
 
   useEffect(async () => {
 
@@ -125,20 +125,20 @@ const Subcategoryedit = () => {
                       size="100"
                       value={subcategoryName} onChange={(e) => { setName(e.target.value) }}
                     />
-                    <div className="editorx  mt-4 mb-4">
+                    {/* <div className="editorx  mt-4 mb-4">
                       <h5 className="field">Sub-Category Description:</h5>
                       <CKEditor
-                  editor={ClassicEditor}
-                  config={{
-                    removePlugins: ["EasyImage", "ImageUpload"]
-                  }}
-                  data={descripition}
-                  onChange={ ( event, editor ) => {
-                    const data = editor.getData();
-                    setDescripition(data);
-                    //console.log( { event, editor, data } );
-                } }/>
-                    </div>
+                        editor={ClassicEditor}
+                        config={{
+                          removePlugins: ["EasyImage", "ImageUpload"]
+                        }}
+                        data={descripition}
+                        onChange={(event, editor) => {
+                          const data = editor.getData();
+                          setDescripition(data);
+                          //console.log( { event, editor, data } );
+                        }} />
+                    </div> */}
                     <Link to="/subcategary"><button className='buttonX' onClick={(e) => editSubCategory()} >  Done</button></Link>
                   </div>
 

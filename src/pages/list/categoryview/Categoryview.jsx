@@ -65,12 +65,12 @@ const Categoryview = () => {
                     disabled
                   />
                 </div>
-                <div className="details mb-4">
+                {/* <div className="details mb-4">
                   <h5 className="field">
                     Category Description:
                   </h5>
-                  <div  className='parsedHTMLforCat' dangerouslySetInnerHTML={{__html: description}}></div>
-                </div>
+                  <div className='parsedHTMLforCat' dangerouslySetInnerHTML={{ __html: description }}></div>
+                </div> */}
                 <Link to="/categary" ><button className='buttonN' >  Done</button></Link>
               </div>
             </div>

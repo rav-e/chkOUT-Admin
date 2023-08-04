@@ -210,7 +210,7 @@ const Newsub = ({ title }) => {
                             <textarea placeholder="About Product....."  onChange={(e)=>handle(e)} rows="8"cols="62.5" width="10px" border-radius="0.8px" id="description" value={data.description} />
                         </div> */}
 
-                                        <div className=" mb-4">
+                                        {/* <div className=" mb-4">
                                             <h5 className="field">Category Description:</h5>
                                             <CKEditor
                                                 editor={ClassicEditor}
@@ -223,7 +223,7 @@ const Newsub = ({ title }) => {
                                                     setRichText(data)
 
                                                 }} />
-                                        </div>
+                                        </div> */}
 
 
                                         <Link to=""><button className="buttonN mb-3" onClick={(e) => uploadImage()}>  Add New Sub-Category  </button></Link>

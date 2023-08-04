@@ -90,7 +90,7 @@ const [category, setCategory] = useState([]);
 
   const userColumns = [
     { field: "id", headerName: "ID", width: 70 },
-    { field: "categoryName", headerName: "CategoryName", width: 200 },
+    { field: "categoryName", headerName: "Category Name", width: 200 },
   ];
 
   //Delete function 

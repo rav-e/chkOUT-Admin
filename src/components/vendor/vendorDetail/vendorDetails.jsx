@@ -139,11 +139,13 @@ function VendorDetails() {
 
 
         <Accordion.Item eventKey="1" >
-          <Accordion.Header ><strong>Store Details </strong></Accordion.Header>
+          <Accordion.Header ><strong>Company Information </strong></Accordion.Header>
           <Accordion.Body >
             <div class="row">
               <div class="col">
-                <div class="StoreDetails"><span><strong>Store Name:</strong></span>  </div>
+                <div class="StoreDetails"><span><strong>Company Name:</strong></span>  </div>
+                <div class="StoreDetails"><span><strong>Aadhar Card Number: </strong></span> </div>
+                <div class="StoreDetails"><span><strong>PAN Card Number: </strong></span> </div>
                 <div class="StoreDetails"><span><strong>GSTIN: </strong></span> </div>
                 <div class="StoreDetails"><span><strong>Address: </strong></span></div>
                 {/* <div class="StoreDetails"><span><strong>Date of Joining: </strong></span></div> */}
@@ -161,17 +163,43 @@ function VendorDetails() {
         </Accordion.Item>
 
         <Accordion.Item eventKey="2" >
-          <Accordion.Header ><strong>Bank Details</strong></Accordion.Header>
+          <Accordion.Header ><strong>Basic Information</strong></Accordion.Header>
           <Accordion.Body >
             <div class="row">
               <div class="col">
-                <div class="bankDetails"><span><strong>Bank Account Holder Name: </strong></span>
+                <div class="bankDetails"><span><strong>Bussiness Type :  </strong></span>
                 </div>
-                <div class="bankDetails"><span><strong>Bank Account Number:</strong></span></div>
-                <div class="bankDetails"><span><strong>IFSC Code:</strong></span></div>
-                <div class="bankDetails"><span><strong>Bank Name:</strong></span></div>
-                {/* <div class="bankDetails"><span><strong>Branch Name:</strong></span> </div> */}
-                {/* <div class="bankDetails"><span><strong>City:</strong></span></div> */}
+                <div class="bankDetails"><span><strong>Category : </strong></span></div>
+                <div class="bankDetails"><span><strong>Sub Category :</strong></span></div>
+                <div class="bankDetails"><span><strong>Website URL :</strong></span></div>
+                <div class="bankDetails"><span><strong>Insta Page URL :</strong></span> </div>
+                <div class="bankDetails"><span><strong>WhatsApp Catlog URL :</strong></span></div>
+                {/* <div class="bankDetails"><span><strong>State:</strong></span></div> */}
+              </div>
+              <div class="col">
+                <div class="bankDetails"><span>{accountHolderName}</span>
+                </div>
+                <div class="bankDetails"><span>{accountNumber} </span> </div>
+                <div class="bankDetails"><span>{ifscCode}</span> </div>
+                <div class="bankDetails"><span>{bankName}</span> </div>
+                {/* <div class="bankDetails"><span>Getty Villa</span> </div> */}
+                {/* <div class="bankDetails"><span>Malibu</span> </div> */}
+                {/* <div class="bankDetails"><span>California</span> </div> */}
+              </div>
+            </div>
+
+          </Accordion.Body>
+        </Accordion.Item>
+        <Accordion.Item eventKey="3" >
+          <Accordion.Header ><strong>Others Information</strong></Accordion.Header>
+          <Accordion.Body >
+            <div class="row">
+              <div class="col">
+                <div class="bankDetails"><span><strong>Is your brand a homegrown brand :  </strong></span></div>
+                <div class="bankDetails"><span><strong>Raw material From : </strong></span></div>
+                <div class="bankDetails"><span><strong>Other eccomerce platforms  :</strong></span></div>
+                <div class="bankDetails"><span><strong>E-commerce Platform Name :</strong></span></div>
+                <div class="bankDetails"><span><strong>Subscription :</strong></span></div>
                 {/* <div class="bankDetails"><span><strong>State:</strong></span></div> */}
               </div>
               <div class="col">
@@ -189,83 +217,11 @@ function VendorDetails() {
           </Accordion.Body>
         </Accordion.Item>
 
-        <Accordion.Item eventKey="3" >
-          <Accordion.Header ><strong>Documents </strong></Accordion.Header>
-          <Accordion.Body >
-            <div class="row">
-              <div class="row">
-                <div class="col">
-                  {/* <div class="Documents"><span><strong>Address Proof: </strong></span></div> */}
-                  <div class="Documents"><span><strong>Signature:</strong></span></div>
-                  <div class="Documents"><span><strong>Cancelled Cheque</strong></span></div>
-                </div>
-                <div class="col">
-                  {/* <div class="Documents"><button type="button" class="btn btn-sm btn-outline-warning">View</button></div> */}
-                  <div className="Documents"><button type="button" className="btn btn-sm btn-outline-warning" data-toggle="modal"
-        data-target="#signature">View</button></div>
-                  {/* MODOL for Signature */}
-                  <div className="modal fade" id="signature" tabindex="-1"
-                    role="dialog" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div className="modal-dialog" role="document">
-                      <div className="modal-content">
-                        {/* <!-- Modal heading --> */}
-                        <div className="modal-header">
-                          <h5 className="modal-title" id="exampleModalLabel">
-                            Signature
-                          </h5>
-                          <button type="button" className="close"
-                            data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">
-                              ×
-                            </span>
-                          </button>
-                        </div>
-                        {/* <!-- Modal body with image --> */}
-                        <div className="modal-body">
-                          
-                          <img className='docsImage img-thumbnail' src={Signature} />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+
+        {/* /// Modal  */}
 
 
-                  <div class="Documents"><button type="button" class="btn btn-sm  btn-outline-warning" data-toggle="modal"
-        data-target="#Cheque">View</button></div>
-
-                  {/* MODOL Checque */}
-                  <div className="modal fade" id="Cheque" tabindex="-1"
-                    role="dialog" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div className="modal-dialog" role="document">
-                      <div className="modal-content">
-                        {/* <!-- Modal heading --> */}
-                        <div className="modal-header">
-                          <h5 className="modal-title" id="exampleModalLabel">
-                          Cancelled Cheque
-                          </h5>
-                          <button type="button" className=" btn btn-outline-warning"
-                            data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">
-                              ×
-                            </span>
-                          </button>
-                        </div>
-                        {/* <!-- Modal body with image --> */}
-                        <div className="modal-body">
-                          
-                          <img className='docsImage img-thumbnail' src={Chequeue} />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </Accordion.Body>
-        </Accordion.Item>
+        {/* /// Modal  */}
       </Accordion>
 
 

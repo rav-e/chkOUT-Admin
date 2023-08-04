@@ -21,7 +21,7 @@ import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import CompareIcon from '@mui/icons-material/Compare';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 
-import name from './name.png'
+import name from './logo.png'
 
 const Sidebar = () => {
   const { dispatch } = useContext(DarkModeContext);
@@ -30,7 +30,7 @@ const Sidebar = () => {
       <div className="top ">
       <Link to="/dashboard" style={{ textDecoration: "none" }}>
           {/* <span className="logo" >  OPENBOX.IN</span> */}
-          <img className = "nameIcon" src={name} alt="" />
+          <img className = "nameIcon" src={name} alt="" height={50} width={120}/>
         </Link>
       </div>
       <div className="center">
@@ -54,10 +54,10 @@ const Sidebar = () => {
               <span>Sub-Category</span>
             </li>
           </Link>
-          <Link to="/product" style={{ textDecoration: "none" }}>
+          <Link to="/brands" style={{ textDecoration: "none" }}>
             <li>
               <ProductionQuantityLimitsRoundedIcon className="icon" />
-              <span>Product</span>
+              <span>Brands</span>
             </li>
           </Link>
           
@@ -68,28 +68,14 @@ const Sidebar = () => {
           </li>
           </Link>
 
-          <Link to="/customer" style={{ textDecoration: "none" }}>
+          <Link to="/user" style={{ textDecoration: "none" }}>
           <li>
             <PeopleIcon className="icon" />
-            <span>Customer's List</span>
+            <span>User's List</span>
           </li>
           </Link>
           
           <p className="title">USEFUL</p>
-          <Link to="/taxmaster" style={{ textDecoration: "none" }}>
-          
-          <li>
-            <AppRegistrationIcon className="icon" />
-            <span>Taxmaster</span>
-          </li>
-          </Link>
-
-          <Link to="/bassicAccounting" style={{ textDecoration: "none" }}> 
-          <li>
-            <CurrencyRupeeIcon className="icon" />
-            <span>Bassic Accounting</span>
-          </li>
-          </Link>
           
           <Link to="/banner" style={{ textDecoration: "none" }}>
             <li>
@@ -97,27 +83,6 @@ const Sidebar = () => {
             <span>Banner</span>
           </li>
           </Link>
-          <p className="title">SERVICE</p>
-          {/* <li>
-            <SettingsSystemDaydreamOutlinedIcon className="icon" />
-            <span>Basic Accounting</span>
-          </li> */}
-          <li>
-            <PsychologyOutlinedIcon className="icon" />
-            <span>User Right Accounting</span>
-          </li>
-          <Link to="/Setting" style={{ textDecoration: "none" }}>
-
-          <li>
-            <SettingsApplicationsIcon className="icon" />
-            <span>Settings</span>
-          </li>
-          </Link>
-          <p className="title">USER</p>
-          <li>
-            <AccountCircleOutlinedIcon className="icon" />
-            <span>Profile</span>
-          </li>
           <li>
             <ExitToAppIcon className="icon" />
             <span>Logout</span>

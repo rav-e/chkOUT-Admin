@@ -9,7 +9,7 @@ import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
 
-import admin from "../../images/logo.png"
+import admin from "../../images/logo1.png"
 
 const Navbar = () => {
   const { dispatch } = useContext(DarkModeContext);
@@ -18,8 +18,8 @@ const Navbar = () => {
     <div className="navbar ">
       <div className="wrapper ">
         <div className="search">
-          <input type="text" placeholder="Search..." size={50}/>
-          <SearchOutlinedIcon />
+          <input type="text" style={{color : "#fff"}} placeholder="Search..." size={50}/>
+          <SearchOutlinedIcon style={{color : "#fff"}} />
         </div>
         <div className="items">
 
@@ -58,8 +58,9 @@ const Navbar = () => {
               src={admin}
               alt="Admin"
               className="avatar"
+              
             />
-            <span>Admin</span>
+            <span className="admin-style">Admin</span>
           </div>
         </div>
       </div>

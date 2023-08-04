@@ -10,10 +10,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 const Home = () => {
 
-const [countVendor, setCountVendor] = useState("")
-const [countCustomer, setCountCustomer] = useState("")
-const [pendingVendor, setPendingVendor] = useState("")
-const [monthlyOrders, setMonthlyOrders] = useState("")
+  const [countVendor, setCountVendor] = useState("")
+  const [countCustomer, setCountCustomer] = useState("")
+  const [pendingVendor, setPendingVendor] = useState("")
+  const [monthlyOrders, setMonthlyOrders] = useState("")
 
   useEffect(() => {
     getCountOfVendor();
@@ -52,18 +52,28 @@ const [monthlyOrders, setMonthlyOrders] = useState("")
         <Navbar />
         <div className="widgets">
           <Widget type="user" countt={countCustomer} />
-          <Widget type="vendor" countt={countVendor}/>
+          <Widget type="vendor" countt={countVendor} />
           <Widget type="pending" countt={pendingVendor} />
-          <Widget type="order" countt={monthlyOrders}/>
+          <Widget type="order" countt={monthlyOrders} />
         </div>
-        <div className="charts">
+
+        {/* // charts  */}
+
+        {/* <div className="charts">
           <Featured />
           <Chart title="Last 6 Months (Revenue)" aspect={2 / 1} />
-        </div>
+        </div> */}
+
+        {/* // charts  */}
+
+        {/* table  */}
+
         {/* <div className="listContainer">
           <div className="listTitle">Latest Transactions</div>
           <Table />
         </div> */}
+
+        {/* table  */}
       </div>
     </div>
   );

@@ -41,8 +41,6 @@ const Producttable = () => {
     <div className="datasub">
       <DataGrid
         className="datagrid"
-
-
         rows={vendorproduct}
         columns={userColumns}
         pageSize={8}

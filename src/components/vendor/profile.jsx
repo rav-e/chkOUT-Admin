@@ -18,7 +18,7 @@ function ProfileCard(props) {
 				</div>
 				<div className="likes">
 					<h1 className="bold-text">{props.productsSold}</h1>
-					<h2 className="smaller-text">Products Sold</h2>
+					<h2 className="smaller-text">Likes user</h2>
 				</div>
 				{/* <div className="photos">
 					<h1 className="bold-text">{props.rating}</h1>

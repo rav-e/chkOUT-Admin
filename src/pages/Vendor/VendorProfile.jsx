@@ -10,6 +10,7 @@ import { useState,useEffect } from "react";
 import axios from "axios";
 import Producttable from "../../components/vendor/productTable";
 import Transactiontable from "../../components/vendor/Transactiontable";
+import VendorBlog from "../../components/vendor/vendor-blog/vendorBlog";
 
 
 
@@ -82,13 +83,16 @@ const getdateandsoldno = async (id) => {
             <VendorDetails aspect={3/1}/>
           </div>
         </div>
-        <div className="bottom">
+        {/* <div className="bottom">
           <h1 className="title"><strong>Listed Products</strong></h1>
           <Producttable />
         </div>
         <div className="bottom">
           <h1 className="title"><strong>Transaction History</strong></h1>
           <Transactiontable />
+        </div> */}
+        <div className="bottom">
+           <VendorBlog/>
         </div>
       </div>
     </div>

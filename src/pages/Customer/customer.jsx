@@ -9,7 +9,7 @@ function Customer() {
       <div className="customerContainer">
         <Navbar />
         <div className="customerList">
-          <h1><strong>Customer List</strong></h1>
+          <h1><strong>User List</strong></h1>
           <Datacustomer />
         </div>
       </div>

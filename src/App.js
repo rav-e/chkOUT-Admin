@@ -85,7 +85,7 @@ function App() {
             </Route>
 
             {/* Product */}
-            <Route path="Product" >
+            <Route path="brands" >
               <Route index element={<Product />} />
               <Route path="view/:id" element={<Productview />} />
               <Route path="edit/:id" element={<Productedit />} />
@@ -131,10 +131,9 @@ function App() {
             </Route>
 
             {/* Customer */}
-            <Route path="Customer" >
+            <Route path="User" >
               <Route index element={<Customer />} />
               <Route path="view/:id" element={<CustomerProfile />} />
-
             </Route>
 
 

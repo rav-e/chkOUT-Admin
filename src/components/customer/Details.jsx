@@ -36,7 +36,7 @@ function  Details() {
   return (
 
     <div className="row p-1">
-      <h2><strong> Customer Details</strong></h2>
+      <h2><strong> User Details</strong></h2>
       <div className="col">
         <div className="row">
           <div className="col-6">
@@ -62,7 +62,15 @@ function  Details() {
             <span>{phone}</span>
           </div>
         </div>
-        <div className="row mt-2">
+        <div className="row">
+          <div className="col-6">
+            <span><strong>Date of Birth :</strong></span>
+          </div>
+          <div className="col-6">
+            <span>{email}</span>
+          </div>
+        </div>
+        {/* <div className="row mt-2">
           <span><strong>Address</strong></span>
           <div className="col ms-2">
             <div className="row">
@@ -106,7 +114,7 @@ function  Details() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div >
   );

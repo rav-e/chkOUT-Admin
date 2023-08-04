@@ -76,7 +76,7 @@ const New = ({ title }) => {
         navigate('/categary', { replace: true });
         window.location.reload()
        }else{
-        alert("PLZZ upload the image")
+        alert("Please upload the image")
        }
        
        
@@ -153,7 +153,7 @@ const New = ({ title }) => {
                            
                             <textarea placeholder="About Product....." onChange={(e) => handle(e)} rows="8" cols="62.5" width="10px" border-radius="0.8px" id="description" value={data.description} />
                         </div> */}
-                                    <div className="editorCat mb-4">
+                                    {/* <div className="editorCat mb-4">
                                         <h5 className="field">Category Description:</h5>
                                         <CKEditor
                                             editor={ClassicEditor}
@@ -166,7 +166,7 @@ const New = ({ title }) => {
                                                 setText(data)
 
                                             }} />
-                                    </div>
+                                    </div> */}
                                     <Link to=""> <button className="buttonN mb-3" onClick={(e) => uploadImage(e)}>  Add New Category </button></Link>
                                     </div>
                                 </form>

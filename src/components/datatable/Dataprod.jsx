@@ -82,8 +82,8 @@ const Dataprod = () => {
   };
 
   const userColumns = [
-    { field: "id", headerName: "ID", width: 70 },
-    { field: "productName", headerName: "ProductName", width: 300 },
+    { field: "id", headerName: "Sr.", width: 80 },
+    { field: "productName", headerName: "Brand Name", width: 400 },
     //{field: "isActive", headerName: "Status", width: 300}
    
   ];
@@ -108,7 +108,7 @@ const Dataprod = () => {
     {
       field: "action",
       headerName: "Action",
-      width: 200,
+      width: 250,
       renderCell: (params) => {
         return (
           <div className="cellAction">
@@ -136,7 +136,7 @@ const Dataprod = () => {
   const actionStatus = [{
     field: "status",
     headerName: "Status",
-    width: 150,
+    width: 200,
     renderCell: (params) => {
       return(
         <div className="cellAction" >
@@ -152,11 +152,11 @@ const Dataprod = () => {
   return (
     <div className="dataprod">
       <div className="dataprodTitle">
-        <h1><strong>Products</strong></h1>
+        <h1><strong>Brands</strong></h1>
 
-        <Link to="/product/new" className="link">
+        {/* <Link to="/product/new" className="link">
           Add New Product
-        </Link>
+        </Link> */}
       </div>
       <div className="datasubProduct">
       <Box sx={{ height: 800, width: '100%' }}>

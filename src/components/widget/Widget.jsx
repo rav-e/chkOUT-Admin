@@ -23,11 +23,11 @@ const Widget = ({ type,countt }) => {
 
     case "user":
       data = {
-        title: "Total Customers",
+        title: "Total Users",
         isMoney: false,
         count:{countt},
         // <Link to="/vendor" style={{ textDecoration: "none" }}></Link>,
-        link:(<Link to="/customer" style={{ textDecoration: "none",color:"black" }}><span>Customer List</span></Link> ),
+        link:(<Link to="/customer" style={{ textDecoration: "none",color:"black" }}><span>Users List</span></Link> ),
         icon: (
           <PersonOutlinedIcon
             className="icon"
@@ -77,10 +77,10 @@ const Widget = ({ type,countt }) => {
 
     case "order":
       data = {
-        title: "Monthly Orders",
+        title: "Monthly Users",
         isMoney: true,
         count:{countt},
-        link: (<Link to="/bassicAccounting" style={{ textDecoration: "none",color:"black" }}><span>Order's List</span></Link> ),
+        link: (<Link to="/customer" style={{ textDecoration: "none",color:"black" }}><span>Users List</span></Link> ),
         icon: (
           <AccountBalanceWalletOutlinedIcon
             className="icon"

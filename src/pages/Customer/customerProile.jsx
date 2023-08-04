@@ -41,10 +41,10 @@ export default function CustomerProfile(){
             <Details aspect={3/1}/>
           </div>
         </div>
-        <div className="bottom">
+        {/* <div className="bottom">
           <h1 className="title"><strong>Order Details</strong></h1>
           <DataCustomerOrderList />
-        </div>
+        </div> */}
       </div>
     </div>
     </div>

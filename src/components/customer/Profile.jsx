@@ -13,7 +13,7 @@ function ProfileCard(props) {
 			<div className="social-container">
 				<div className="likes">
 					<h1 className="bold-text">{props.productsBuyed}</h1>
-					<h2 className="smaller-text"> <strong>Products Buyed</strong> </h2>
+					<h2 className="smaller-text"> <strong>Buddies</strong> </h2>
 					</div>
 				</div>
 		</div>
